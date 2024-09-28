@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jbSprOiFEaM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\NUC\\Desktop\\AppartmentBookingSystem\\ABS.Back\\ABS.Back.Domain\\ABS.Back.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NUC\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
