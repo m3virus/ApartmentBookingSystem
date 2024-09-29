@@ -1,4 +1,4 @@
-﻿namespace ABS.Back.Domain.Apartments;
+﻿namespace ABS.Back.Domain.Shared;
 
 public record Currency
 {
@@ -6,9 +6,9 @@ public record Currency
     public static Currency Usd = new("USD");
     public static Currency Rial = new("Rial");
 
-    private Currency (string code) => code = Code;
-    
-    public string Code { get; init; } = null!; 
+    private Currency(string code) => code = Code;
+
+    public string Code { get; init; } = null!;
 
     public static Currency Type(string code)
     {
