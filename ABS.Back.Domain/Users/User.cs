@@ -1,4 +1,4 @@
-﻿using ABS.Back.Domain.Abstraction;
+﻿using ABS.Back.Domain.Abstractions;
 using ABS.Back.Domain.Users.Events;
 
 namespace ABS.Back.Domain.Users

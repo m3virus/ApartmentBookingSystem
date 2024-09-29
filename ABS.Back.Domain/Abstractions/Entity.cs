@@ -1,4 +1,4 @@
-﻿namespace ABS.Back.Domain.Abstraction;
+﻿namespace ABS.Back.Domain.Abstractions;
 
 public abstract class Entity
 {

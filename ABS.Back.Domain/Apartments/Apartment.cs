@@ -1,4 +1,4 @@
-﻿using ABS.Back.Domain.Abstraction;
+﻿using ABS.Back.Domain.Abstractions;
 
 namespace ABS.Back.Domain.Apartments
 {
