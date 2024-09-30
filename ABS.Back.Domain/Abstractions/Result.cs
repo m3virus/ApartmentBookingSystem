@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace ABS.Back.Domain.Abstractions;
 
@@ -26,8 +26,10 @@ public class Result
     public static Result Success() => new(true, Error.None);
     public static Result Failure(Error error) => new(false, error);
     public static Result<TEntity> Success<TEntity>(TEntity entity) => new(entity, true, Error.None);
-    public static Result<TEntity> Failure<TEntity>(Error error) => new(default, false, error);
+    public static Result<TEntity> Failure<TEntity>(Error error) => new(default!, false, error);
 
+    public static Result<TEntity> Create<TEntity>(TEntity entity) =>
+        entity is not null ? Success(entity) : Failure<TEntity>(Error.NullVallue);
 }
 
 public class Result<TEntity> : Result
@@ -38,5 +40,9 @@ public class Result<TEntity> : Result
         _entity = entity;
     }
 
-    
+    [NotNull]
+    public TEntity Entity => IsSuccess ? _entity! :
+        throw new InvalidOperationException("The Value Cannot Be Acceptable");
+
+    public static implicit operator Result<TEntity>(TEntity entity) => Create(entity);
 }
