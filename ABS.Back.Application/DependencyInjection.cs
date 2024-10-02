@@ -1,4 +1,6 @@
-﻿using ABS.Back.Domain.Booking;
+﻿using ABS.Back.Application.Abstractions.Behaviors;
+using ABS.Back.Domain.Booking;
+using ABS.Back.Domain.Users;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ABS.Back.Application;
@@ -9,7 +11,10 @@ public static class DependencyInjection
     {
         service.AddMediatR(configuration =>
         {
-            configuration.RegisterServicesFromAssemblies(typeof(DependencyInjection).Assembly);
+            configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+
+            configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
+            configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
 
         service.AddTransient<PricingService>();
